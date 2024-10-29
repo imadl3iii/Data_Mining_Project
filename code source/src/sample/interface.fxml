@@ -1,0 +1,904 @@
+<?import javafx.geometry.Insets?>
+
+<?import javafx.embed.swing.SwingNode?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280" tabClosingPolicy="UNAVAILABLE"  xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml" fx:controller="sample.interfaceController"
+         >
+    <tabs>
+        <Tab text="Informations sur la base">
+            <content>
+                <AnchorPane prefHeight="861.0" prefWidth="1280.0" style="-fx-background-color: #EFF6FF;">
+                    <children>
+                        <VBox layoutX="10.0" layoutY="15.0" prefHeight="418.0" prefWidth="1259.0">
+                            <children>
+                                <GridPane alignment="CENTER" prefHeight="63.0" prefWidth="1259.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="60.999996185302734" minHeight="10.0" prefHeight="53.66665267944336" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="29.111106872558594" minHeight="0.3333371480306013" prefHeight="7.666680653889976" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#newRow" prefHeight="47.0" prefWidth="312.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" text="Nouvelle ligne" />
+                                        <Button mnemonicParsing="false" onAction="#deleteRow" prefHeight="47.0" prefWidth="312.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" text="Supprimer la ligne" GridPane.columnIndex="1" />
+                                        <Button mnemonicParsing="false" onAction="#SaveDATA" prefHeight="47.0" prefWidth="312.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" text="Enregister la base" GridPane.columnIndex="2" />
+                                        <Button mnemonicParsing="false" onAction="#ImportDATA" prefHeight="47.0" prefWidth="312.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" text="Changer la base" GridPane.columnIndex="3" />
+                                    </children>
+                                </GridPane>
+                                <TableView fx:id="TableDataset" prefHeight="357.0" prefWidth="1259.0" style="-fx-border-width: 0;">
+                                    <columns>
+                                        <TableColumn fx:id="AttributOcc" prefWidth="75.0" text="Instance" />
+                                        <TableColumn fx:id="zoneAttr" prefWidth="94.6666488647461" text="surface" />
+                                        <TableColumn fx:id="perimetreAttr" prefWidth="103.33332824707031" text="périmètre " />
+                                        <TableColumn fx:id="compaciteAttr" prefWidth="135.3333740234375" text="compacité" />
+                                        <TableColumn fx:id="longueurNoyauAttr" prefWidth="144.00003051757812" text="longueur du grain" />
+                                        <TableColumn fx:id="largeurNoyauAttr" minWidth="0.0" prefWidth="144.66668701171875" text="largeur du grain" />
+                                        <TableColumn fx:id="asymetrieCoefficientAttr" prefWidth="209.99993896484375" text="coefficient d'asymétrie" />
+                                        <TableColumn fx:id="longueurRainureNoyauAttr" prefWidth="213.3333740234375" text="longueur du sillon du noyau" />
+                                        <TableColumn fx:id="Classe" prefWidth="134.6666259765625" text="Classe" />
+                                    </columns>
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                </TableView>
+                            </children>
+                        </VBox>
+                        <HBox alignment="CENTER" layoutX="12.0" layoutY="433.0" prefHeight="169.0" prefWidth="1255.0" spacing="5.0">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <children>
+                                <GridPane prefHeight="185.0" prefWidth="1245.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="675.3333129882812" minWidth="10.0" prefWidth="607.6666971842448" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="675.3333129882812" minWidth="10.0" prefWidth="61.66666666666663" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="640.666717529297" minWidth="10.0" prefWidth="594.3333333333334" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="94.00002034505208" minHeight="10.0" prefHeight="20.666707356770832" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="195.3332945505778" minHeight="10.0" prefHeight="137.99995930989584" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane prefHeight="117.0" prefWidth="567.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-padding: 10;" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.4000244140625" minWidth="10.0" prefWidth="174.33334350585938" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="579.5999603271484" minWidth="10.0" prefWidth="135.66665649414065" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="579.5999603271484" minWidth="10.0" prefWidth="148.66668701171875" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="579.5999603271484" minWidth="10.0" prefWidth="145.33331298828125" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Caractéristiques de la base" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Caractéristiques des attributs" GridPane.rowIndex="1" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre d'instances" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre des attributs" GridPane.rowIndex="2" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Valeurs manquantes" GridPane.columnIndex="2" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de classes" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <Text fx:id="Dataset_Caracteristiques" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="128.99996948242188" GridPane.columnIndex="1" />
+                                                <Text fx:id="NombresR" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="131.66668701171875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Text fx:id="NbrInstances" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="130.3333179950714" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Text fx:id="NbrAttributs" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="126.33334350585938" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Text fx:id="Valeurs_manquantes" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="132.00000500679016" GridPane.columnIndex="3" />
+                                                <Text fx:id="NbrClasses" layoutX="450.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="134.33337903022766" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </padding>
+                                        </GridPane>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" />
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+                                        <TextArea fx:id="Dataset_description" editable="false" prefHeight="117.0" prefWidth="607.0" style="-fx-border-color: #DBEAFE; -fx-border-width: 2; -fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-border-radius: 10;" GridPane.rowIndex="1" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Informations sur les attributs">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EFF6FF;">
+                    <children>
+                        <SplitPane prefHeight="691.2" prefWidth="1280.0" style="-fx-background-color: #EFF6FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <items>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                    <children>
+                                        <Text layoutX="494.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attribut" AnchorPane.leftAnchor="494.0" AnchorPane.topAnchor="41.05078125" />
+                                        <ChoiceBox fx:id="Select" layoutX="634.0" layoutY="37.0" prefWidth="150.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0;" AnchorPane.leftAnchor="634.0" AnchorPane.topAnchor="37.0" />
+                                        <TextArea fx:id="Attr_Symetrie" editable="false" layoutX="95.0" layoutY="98.0" prefHeight="83.0" prefWidth="1087.0" promptText="Symetrie" style="-fx-border-color: #DBEAFE; -fx-border-width: 2; -fx-background-color: #DBEAFE; -fx-border-radius: 10; -fx-background-radius: 10;" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="98.0" />
+                                        <GridPane fx:id="GraphDiv1" layoutX="95.0" layoutY="235.0" prefHeight="180.0" prefWidth="466.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-padding: 10;" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="717.0" AnchorPane.topAnchor="235.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moyenne" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Moyenne tronquée" GridPane.rowIndex="1" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Médiane" GridPane.rowIndex="2" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mode" GridPane.rowIndex="3" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Milieu de l'étendue" GridPane.rowIndex="4" />
+                                                <Text fx:id="Attr_Moyenne" strokeType="OUTSIDE" strokeWidth="0.0" text="" GridPane.columnIndex="1" />
+                                                <Text fx:id="Attr_MoyenneTronquee" strokeType="OUTSIDE" strokeWidth="0.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Text fx:id="Attr_Mediane" strokeType="OUTSIDE" strokeWidth="0.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Text fx:id="Attr_Mode" strokeType="OUTSIDE" strokeWidth="0.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Text fx:id="Attr_Midrange" strokeType="OUTSIDE" strokeWidth="0.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                            </children>
+                                        </GridPane>
+                                        <SwingNode fx:id="Graphique_Class" layoutX="149.0" layoutY="250.0" visible="false" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="250.0" />
+                                        <GridPane fx:id="GraphDiv2" layoutX="717.0" layoutY="235.0" prefHeight="180.0" prefWidth="467.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-padding: 10;">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.22216796875" minWidth="10.0" prefWidth="144.77779134114581" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.77777099609375" minWidth="0.0" prefWidth="244.5555419921875" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Etendue" />
+                                                <Text fx:id="Attr_Etendue" strokeType="OUTSIDE" strokeWidth="0.0" text="" GridPane.columnIndex="1" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quartiles" GridPane.rowIndex="1" />
+                                                <Text fx:id="Attr_quartiles" strokeType="OUTSIDE" strokeWidth="0.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Variance" GridPane.rowIndex="2" />
+                                                <Text fx:id="Attr_Variance" strokeType="OUTSIDE" strokeWidth="0.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ecart-type" GridPane.rowIndex="3" />
+                                                <Text fx:id="Attr_EcartType" strokeType="OUTSIDE" strokeWidth="0.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ecart interquartile" GridPane.rowIndex="4" />
+                                                <Text fx:id="Attr_IQR" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Valeurs Aberrantes" GridPane.rowIndex="5" />
+                                                <Text fx:id="Attr_ValeursAberrantes" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Histogrammes et graphes">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EFF6FF;">
+                    <children>
+                        <AnchorPane layoutX="355.0" layoutY="-13.0" minHeight="0.0" minWidth="0.0" prefHeight="690.0" prefWidth="570.0">
+                            <children>
+                                <SwingNode fx:id="Graphique_Attr" layoutX="20.0" layoutY="215.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="215.0" />
+                                <GridPane layoutX="20.0" layoutY="50.0" prefHeight="150.0" prefWidth="545.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <RadioButton fx:id="CheckScatterP" mnemonicParsing="false" text="Diagramme de dispersion" GridPane.columnIndex="2">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="graphsGroup" />
+                                            </toggleGroup>
+                                        </RadioButton>
+                                        <RadioButton fx:id="CheckBoxP" mnemonicParsing="false" text="Boîte à moustache" toggleGroup="$graphsGroup" />
+                                        <ChoiceBox fx:id="Selected1" minHeight="25.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <ChoiceBox fx:id="Selected2" prefWidth="150.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <RadioButton fx:id="CheckHisto" mnemonicParsing="false" text="Histogramme" toggleGroup="$graphsGroup" GridPane.columnIndex="1" />
+                                        <Button fx:id="DisplayGraph" minHeight="25.0" mnemonicParsing="false" onAction="#DisplayGraphique" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0;" text="Afficher résultat" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Normalisation">
+            <content>
+                <AnchorPane prefHeight="861.0" prefWidth="1280.0" style="-fx-background-color: #EFF6FF;">
+                    <children>
+                        <HBox layoutX="435.0" layoutY="40.0" prefHeight="34.0" prefWidth="416.0">
+                            <children>
+                                <ChoiceBox fx:id="selectedTypeNormalization" minHeight="25.0" prefHeight="34.0" prefWidth="332.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" />
+                                <Label prefHeight="17.0" prefWidth="20.0" />
+                                <Button fx:id="normlizeBtn" mnemonicParsing="false" onAction="#normlizeBtnFunction" prefHeight="42.0" prefWidth="99.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" text="Normaliser" />
+                            </children>
+                        </HBox>
+                        <TableView fx:id="TableNormalization" layoutX="13.0" layoutY="132.0" prefHeight="485.0" prefWidth="1259.0" style="-fx-border-width: 0;">
+                            <columns>
+                                <TableColumn fx:id="AttributOcc1N" prefWidth="75.0" text="Instance" />
+                                <TableColumn fx:id="zoneAttr1N" prefWidth="94.6666488647461" text="surface" />
+                                <TableColumn fx:id="perimetreAttr1N" prefWidth="103.33332824707031" text="périmètre " />
+                                <TableColumn fx:id="compaciteAttr1N" prefWidth="135.3333740234375" text="compacité" />
+                                <TableColumn fx:id="longueurNoyauAttr1N" prefWidth="144.00003051757812" text="longueur du grain" />
+                                <TableColumn fx:id="largeurNoyauAttr1N" minWidth="0.0" prefWidth="144.66668701171875" text="largeur du grain" />
+                                <TableColumn fx:id="asymetrieCoefficientAttr1N" prefWidth="209.99993896484375" text="coefficient d'asymétrie" />
+                                <TableColumn fx:id="longueurRainureNoyauAttr1N" prefWidth="213.3333740234375" text="longueur du sillon du noyau" />
+                                <TableColumn fx:id="Classe1N" prefWidth="134.6666259765625" text="Classe" />
+                            </columns>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </TableView>
+                        <HBox fx:id="horizontalMinMax" layoutX="435.0" layoutY="85.0" prefHeight="34.0" prefWidth="416.0">
+                            <children>
+                                <TextField fx:id="minNormal" prefHeight="34.0" prefWidth="209.0" promptText="Valeur minimale" style="-fx-background-radius: 10;" />
+                                <Label prefHeight="17.0" prefWidth="10.0" />
+                                <TextField fx:id="maxNormal" prefHeight="34.0" prefWidth="207.0" promptText="Valeur maximale" style="-fx-background-radius: 10;" />
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Discrétisation">
+            <content>
+                <AnchorPane prefHeight="861.0" prefWidth="1280.0" style="-fx-background-color: #EFF6FF;">
+                    <children>
+                        <HBox layoutX="435.0" layoutY="40.0" prefHeight="34.0" prefWidth="416.0">
+                            <children>
+                                <ChoiceBox fx:id="selectedTypeDiscritization" minHeight="25.0" prefHeight="34.0" prefWidth="332.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" />
+                                <Label prefHeight="17.0" prefWidth="20.0" />
+                                <Button fx:id="discritizateBtn" mnemonicParsing="false" onAction="#discritizateBtnFunction" prefHeight="42.0" prefWidth="99.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" text="Discrétiser" />
+                            </children>
+                        </HBox>
+                        <TableView fx:id="TableDiscritization" layoutX="13.0" layoutY="132.0" prefHeight="485.0" prefWidth="1259.0" style="-fx-border-width: 0;">
+                            <columns>
+                                <TableColumn fx:id="AttributOcc1D" prefWidth="75.0" text="Instance" />
+                                <TableColumn fx:id="zoneAttr1D" prefWidth="94.6666488647461" text="surface" />
+                                <TableColumn fx:id="perimetreAttr1D" prefWidth="103.33332824707031" text="périmètre " />
+                                <TableColumn fx:id="compaciteAttr1D" prefWidth="135.3333740234375" text="compacité" />
+                                <TableColumn fx:id="longueurNoyauAttr1D" prefWidth="144.00003051757812" text="longueur du grain" />
+                                <TableColumn fx:id="largeurNoyauAttr1D" minWidth="0.0" prefWidth="144.66668701171875" text="largeur du grain" />
+                                <TableColumn fx:id="asymetrieCoefficientAttr1D" prefWidth="209.99993896484375" text="coefficient d'asymétrie" />
+                                <TableColumn fx:id="longueurRainureNoyauAttr1D" prefWidth="213.3333740234375" text="longueur du sillon du noyau" />
+                                <TableColumn fx:id="Classe1D" prefWidth="134.6666259765625" text="Classe" />
+                            </columns>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </TableView>
+                        <HBox layoutX="435.0" layoutY="85.0" prefHeight="34.0" prefWidth="416.0">
+                            <children>
+                                <TextField fx:id="inputDiscritizate" prefHeight="34.0" prefWidth="419.0" promptText="Donner une valeur numérique" style="-fx-background-radius: 10;" />
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Classification">
+            <content>
+                <AnchorPane prefHeight="861.0" prefWidth="1280.0" style="-fx-background-color: #EFF6FF;">
+                    <children>
+                        <Button fx:id="btnClass" layoutX="150.0" layoutY="488.0" mnemonicParsing="false" onAction="#classificationFunction" prefHeight="34.0" prefWidth="99.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" text="Classifier" />
+                        <Separator layoutX="398.0" layoutY="-8.0" orientation="VERTICAL" prefHeight="682.0" prefWidth="15.0" />
+                        <VBox layoutX="24.0" layoutY="125.0" prefHeight="345.0" prefWidth="130.0">
+                            <children>
+                                <TextField fx:id="a1" prefHeight="34.0" promptText="Zone" style="-fx-background-radius: 10;">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </TextField>
+                                <Label prefHeight="5.0" prefWidth="28.0" />
+                                <TextField fx:id="a2" prefHeight="34.0" promptText="Surface" style="-fx-background-radius: 10;">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </TextField>
+                                <Label prefHeight="5.0" prefWidth="28.0" />
+                                <TextField fx:id="a3" prefHeight="34.0" promptText="Compacité" style="-fx-background-radius: 10;">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </TextField>
+                                <Label prefHeight="5.0" prefWidth="28.0" />
+                                <TextField fx:id="a4" prefHeight="34.0" promptText="Longueur du grain" style="-fx-background-radius: 10;">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </TextField>
+                                <Label prefHeight="5.0" prefWidth="28.0" />
+                                <TextField fx:id="a5" prefHeight="34.0" promptText="Largeur du grain" style="-fx-background-radius: 10;">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </TextField>
+                                <Label prefHeight="5.0" prefWidth="28.0" />
+                                <TextField fx:id="a6" prefHeight="34.0" promptText="Coéfficient d'asymétrie" style="-fx-background-radius: 10;">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </TextField>
+                                <Label prefHeight="5.0" prefWidth="28.0" />
+                                <TextField fx:id="a7" prefHeight="34.0" prefWidth="0.0" promptText="Longueur du silon" style="-fx-background-radius: 10;">
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </VBox>
+                        <ChoiceBox fx:id="selectedTypeClass" layoutX="24.0" layoutY="63.0" minHeight="25.0" prefHeight="34.0" prefWidth="351.0" style="-fx-background-color: #DBEAFE; -fx-border-width: 0; -fx-background-radius: 10;" />
+                        <VBox layoutX="245.0" layoutY="170.0" prefHeight="108.0" prefWidth="130.0">
+                            <children>
+                                <TextField fx:id="inputTailleClass" prefHeight="34.0" prefWidth="130.0" promptText="Ensemble de test (N° instance)" style="-fx-background-radius: 10;" />
+                                <Label prefHeight="40.0" prefWidth="25.0" />
+                                <TextField fx:id="inputDiscClass" prefHeight="34.0" prefWidth="131.0" promptText="Nombre d'intervalle" style="-fx-background-radius: 10;" />
+                            </children>
+                        </VBox>
+                        <VBox fx:id="vboxKnn" layoutX="245.0" layoutY="317.0" prefHeight="108.0" prefWidth="130.0">
+                            <children>
+                                <ChoiceBox fx:id="selectedFunctionKnn" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-border-width: 0;" />
+                                <Label prefHeight="40.0" prefWidth="26.0" />
+                                <TextField fx:id="inputK" prefHeight="34.0" promptText="Le nombre de voisins &quot;K&quot;" style="-fx-background-radius: 10;" />
+                            </children>
+                        </VBox>
+                        <Label layoutX="522.0" layoutY="4.0" text="Classification naive ">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font></Label>
+                        <Label layoutX="1006.0" layoutY="4.0" text="KNN">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font></Label>
+                        <Button fx:id="btnTestCB" layoutX="554.0" layoutY="74.0" mnemonicParsing="false" onAction="#TestCB" prefHeight="34.0" prefWidth="66.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-border-width: 0;" text="Tester" />
+                        <Button fx:id="btnTestKnn" layoutX="988.0" layoutY="74.0" mnemonicParsing="false" onAction="#testKnn" prefHeight="34.0" prefWidth="66.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-border-width: 0;" text="Tester" />
+                        <Separator layoutX="776.0" layoutY="22.0" orientation="VERTICAL" prefHeight="550.0" prefWidth="7.0" />
+                        <GridPane layoutX="418.0" layoutY="121.0" prefHeight="327.0" prefWidth="303.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="32.00004069010416" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.9999796549479" minWidth="10.0" prefWidth="135.99995930989584" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.33331298828125" minWidth="4.000020345052093" prefWidth="16.000040690104157" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.6666463216146" minWidth="10.0" prefWidth="130.0000203450521" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="104.33334350585938" minHeight="10.0" prefHeight="104.33334350585938" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="94.0" minHeight="0.0" prefHeight="13.666656494140625" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="160.00003051757812" minHeight="10.0" prefHeight="104.33334350585938" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="105.00003051757812" minHeight="2.6666361490885606" prefHeight="15.000040690104157" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="160.6666971842448" minHeight="10.0" prefHeight="104.33334350585938" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <GridPane gridLinesVisible="true" prefHeight="103.0" prefWidth="149.0" GridPane.columnIndex="1">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="76.0" text="Accuracy" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="73.0" text="Sensitivity" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="75.0" text="Specificity" GridPane.rowIndex="2" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="77.0" text="Precision" GridPane.rowIndex="3" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="91.0" text="Rappel" GridPane.rowIndex="4" />
+                                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" text="F-Score" GridPane.rowIndex="5" />
+                                        <Label fx:id="accuracy1" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" />
+                                        <Label fx:id="sensitivity1" alignment="CENTER" prefHeight="17.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label fx:id="specificity1" alignment="CENTER" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Label fx:id="precision1" alignment="CENTER" prefHeight="17.0" prefWidth="95.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Label fx:id="rappel1" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <Label fx:id="fscore1" alignment="CENTER" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    </children>
+                                </GridPane>
+                                <GridPane gridLinesVisible="true" prefHeight="110.0" prefWidth="127.0" GridPane.columnIndex="3">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="53.3333740234375" minWidth="10.0" prefWidth="30.66668701171875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.33331298828125" minWidth="10.0" prefWidth="85.33331298828125" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="40.33331298828125" minHeight="10.0" prefHeight="23.666656494140625" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="66.33334350585938" minHeight="10.0" prefHeight="66.33334350585938" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label fx:id="tp1" alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="TP" />
+                                                <Label fx:id="fn1" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="FN" GridPane.columnIndex="1" />
+                                                <Label fx:id="fp1" alignment="CENTER" prefHeight="17.0" prefWidth="49.0" text="FP" GridPane.rowIndex="1" />
+                                                <Label fx:id="tn1" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="TN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Prédite" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="Réelle" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="44.0" text="Classe" />
+                                    </children>
+                                </GridPane>
+                                <GridPane gridLinesVisible="true" prefHeight="103.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="76.0" text="Accuracy" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="73.0" text="Sensitivity" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="75.0" text="Specificity" GridPane.rowIndex="2" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="77.0" text="Precision" GridPane.rowIndex="3" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="91.0" text="Rappel" GridPane.rowIndex="4" />
+                                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" text="F-Score" GridPane.rowIndex="5" />
+                                        <Label fx:id="accuracy2" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" />
+                                        <Label fx:id="sensitivity2" alignment="CENTER" prefHeight="17.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label fx:id="specificity2" alignment="CENTER" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Label fx:id="precision2" alignment="CENTER" prefHeight="17.0" prefWidth="95.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Label fx:id="rappel2" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <Label fx:id="fscore2" alignment="CENTER" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    </children>
+                                </GridPane>
+                                <GridPane gridLinesVisible="true" prefHeight="103.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="76.0" text="Accuracy" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="73.0" text="Sensitivity" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="75.0" text="Specificity" GridPane.rowIndex="2" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="77.0" text="Precision" GridPane.rowIndex="3" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="91.0" text="Rappel" GridPane.rowIndex="4" />
+                                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" text="F-Score" GridPane.rowIndex="5" />
+                                        <Label fx:id="accuracy3" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" />
+                                        <Label fx:id="sensitivity3" alignment="CENTER" prefHeight="17.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label fx:id="specificity3" alignment="CENTER" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Label fx:id="precision3" alignment="CENTER" prefHeight="17.0" prefWidth="95.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Label fx:id="rappel3" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <Label fx:id="fscore3" alignment="CENTER" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    </children>
+                                </GridPane>
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="27.0" text="1" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="26.0" text="2" GridPane.rowIndex="2" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="27.0" text="3" GridPane.rowIndex="4" />
+                                <GridPane gridLinesVisible="true" prefHeight="110.0" prefWidth="127.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="53.3333740234375" minWidth="10.0" prefWidth="30.66668701171875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.33331298828125" minWidth="10.0" prefWidth="85.33331298828125" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="40.33331298828125" minHeight="10.0" prefHeight="23.666656494140625" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="66.33334350585938" minHeight="10.0" prefHeight="66.33334350585938" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label fx:id="tp2" alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="TP" />
+                                                <Label fx:id="fn2" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="FN" GridPane.columnIndex="1" />
+                                                <Label fx:id="fp2" alignment="CENTER" prefHeight="17.0" prefWidth="49.0" text="FP" GridPane.rowIndex="1" />
+                                                <Label fx:id="tn2" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="TN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Prédite" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="Réelle" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="43.0" text="Classe" />
+                                    </children>
+                                </GridPane>
+                                <GridPane gridLinesVisible="true" prefHeight="110.0" prefWidth="127.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="53.3333740234375" minWidth="10.0" prefWidth="30.66668701171875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.33331298828125" minWidth="10.0" prefWidth="85.33331298828125" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="40.33331298828125" minHeight="10.0" prefHeight="23.666656494140625" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="66.33334350585938" minHeight="10.0" prefHeight="66.33334350585938" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label fx:id="tp3" alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="TP" />
+                                                <Label fx:id="fn3" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="FN" GridPane.columnIndex="1" />
+                                                <Label fx:id="fp3" alignment="CENTER" prefHeight="17.0" prefWidth="49.0" text="FP" GridPane.rowIndex="1" />
+                                                <Label fx:id="tn3" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="TN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Prédite" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="Réelle" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefWidth="43.0" text="Classe" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </GridPane>
+                        <HBox layoutX="447.0" layoutY="31.0" prefHeight="36.0" prefWidth="279.0">
+                            <children>
+                                <TextField fx:id="inputTestCB" prefHeight="34.0" prefWidth="130.0" promptText="Ensemble de test (N° instance)" style="-fx-background-radius: 10;" />
+                                <Label prefHeight="17.0" prefWidth="15.0" />
+                                <TextField fx:id="inputIntervalCB" prefHeight="34.0" prefWidth="131.0" promptText="Nombre d'intervalle" style="-fx-background-radius: 10;" />
+                            </children>
+                        </HBox>
+                        <HBox layoutX="799.0" layoutY="32.0" prefHeight="33.0" prefWidth="462.0">
+                            <children>
+                                <TextField fx:id="inputTestKNN" prefHeight="34.0" prefWidth="130.0" promptText="Ensemble de test (N° instance)" style="-fx-background-radius: 10;" />
+                                <Label prefWidth="15.0" />
+                                <TextField fx:id="inputKTest" prefHeight="34.0" promptText="Le nombre de voisins &quot;K&quot;" style="-fx-background-radius: 10;" />
+                                <Label prefWidth="15.0" />
+                                <ChoiceBox fx:id="selectedFunctionTestKnn" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-border-width: 0;" />
+                            </children>
+                        </HBox>
+                        <GridPane layoutX="856.0" layoutY="121.0" prefHeight="327.0" prefWidth="303.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="32.00004069010416" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.9999796549479" minWidth="10.0" prefWidth="135.99995930989584" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.33331298828125" minWidth="4.000020345052093" prefWidth="16.000040690104157" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.6666463216146" minWidth="10.0" prefWidth="130.0000203450521" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="104.33334350585938" minHeight="10.0" prefHeight="104.33334350585938" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="94.0" minHeight="0.0" prefHeight="13.666656494140625" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="160.00003051757812" minHeight="10.0" prefHeight="104.33334350585938" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="105.00003051757812" minHeight="2.6666361490885606" prefHeight="15.000040690104157" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="160.6666971842448" minHeight="10.0" prefHeight="104.33334350585938" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <GridPane gridLinesVisible="true" prefHeight="103.0" prefWidth="149.0" GridPane.columnIndex="1">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="76.0" text="Accuracy" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="73.0" text="Sensitivity" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="75.0" text="Specificity" GridPane.rowIndex="2" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="77.0" text="Precision" GridPane.rowIndex="3" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="91.0" text="Rappel" GridPane.rowIndex="4" />
+                                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" text="F-Score" GridPane.rowIndex="5" />
+                                        <Label fx:id="accuracy11" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" />
+                                        <Label fx:id="sensitivity11" alignment="CENTER" prefHeight="17.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label fx:id="specificity11" alignment="CENTER" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Label fx:id="precision11" alignment="CENTER" prefHeight="17.0" prefWidth="95.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Label fx:id="rappel11" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <Label fx:id="fscore11" alignment="CENTER" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    </children>
+                                </GridPane>
+                                <GridPane gridLinesVisible="true" prefHeight="103.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="76.0" text="Accuracy" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="73.0" text="Sensitivity" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="75.0" text="Specificity" GridPane.rowIndex="2" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="77.0" text="Precision" GridPane.rowIndex="3" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="91.0" text="Rappel" GridPane.rowIndex="4" />
+                                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" text="F-Score" GridPane.rowIndex="5" />
+                                        <Label fx:id="accuracy21" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" />
+                                        <Label fx:id="sensitivity21" alignment="CENTER" prefHeight="17.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label fx:id="specificity21" alignment="CENTER" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Label fx:id="precision21" alignment="CENTER" prefHeight="17.0" prefWidth="95.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Label fx:id="rappel21" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <Label fx:id="fscore21" alignment="CENTER" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    </children>
+                                </GridPane>
+                                <GridPane gridLinesVisible="true" prefHeight="103.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="76.0" text="Accuracy" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="73.0" text="Sensitivity" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="75.0" text="Specificity" GridPane.rowIndex="2" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="77.0" text="Precision" GridPane.rowIndex="3" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="91.0" text="Rappel" GridPane.rowIndex="4" />
+                                        <Label alignment="CENTER" prefHeight="75.0" prefWidth="75.0" text="F-Score" GridPane.rowIndex="5" />
+                                        <Label fx:id="accuracy31" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" />
+                                        <Label fx:id="sensitivity31" alignment="CENTER" prefHeight="17.0" prefWidth="76.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Label fx:id="specificity31" alignment="CENTER" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Label fx:id="precision31" alignment="CENTER" prefHeight="17.0" prefWidth="95.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Label fx:id="rappel31" alignment="CENTER" prefHeight="17.0" prefWidth="81.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <Label fx:id="fscore31" alignment="CENTER" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    </children>
+                                </GridPane>
+                                <GridPane gridLinesVisible="true" prefHeight="110.0" prefWidth="127.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="53.3333740234375" minWidth="10.0" prefWidth="30.66668701171875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.33331298828125" minWidth="10.0" prefWidth="85.33331298828125" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="40.33331298828125" minHeight="10.0" prefHeight="23.666656494140625" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="66.33334350585938" minHeight="10.0" prefHeight="66.33334350585938" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label fx:id="tp31" alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="TP" />
+                                                <Label fx:id="fn31" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="FN" GridPane.columnIndex="1" />
+                                                <Label fx:id="fp31" alignment="CENTER" prefHeight="17.0" prefWidth="49.0" text="FP" GridPane.rowIndex="1" />
+                                                <Label fx:id="tn31" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="TN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Prédite" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="Réelle" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="44.0" text="Classe" />
+                                    </children>
+                                </GridPane>
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="27.0" text="1" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="26.0" text="2" GridPane.rowIndex="2" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="27.0" text="3" GridPane.rowIndex="4" />
+                                <GridPane gridLinesVisible="true" prefHeight="110.0" prefWidth="127.0" GridPane.columnIndex="3">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="53.3333740234375" minWidth="10.0" prefWidth="30.66668701171875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.33331298828125" minWidth="10.0" prefWidth="85.33331298828125" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="40.33331298828125" minHeight="10.0" prefHeight="23.666656494140625" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="66.33334350585938" minHeight="10.0" prefHeight="66.33334350585938" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label fx:id="tp11" alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="TP" />
+                                                <Label fx:id="fn11" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="FN" GridPane.columnIndex="1" />
+                                                <Label fx:id="fp11" alignment="CENTER" prefHeight="17.0" prefWidth="49.0" text="FP" GridPane.rowIndex="1" />
+                                                <Label fx:id="tn11" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="TN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text=" Prédite" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="Réelle" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="47.0" text="Classe" />
+                                    </children>
+                                </GridPane>
+                                <GridPane gridLinesVisible="true" prefHeight="110.0" prefWidth="127.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="53.3333740234375" minWidth="10.0" prefWidth="30.66668701171875" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="85.33331298828125" minWidth="10.0" prefWidth="85.33331298828125" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="40.33331298828125" minHeight="10.0" prefHeight="23.666656494140625" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="66.33334350585938" minHeight="10.0" prefHeight="66.33334350585938" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <GridPane gridLinesVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label fx:id="tp21" alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="TP" />
+                                                <Label fx:id="fn21" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="FN" GridPane.columnIndex="1" />
+                                                <Label fx:id="fp21" alignment="CENTER" prefHeight="17.0" prefWidth="49.0" text="FP" GridPane.rowIndex="1" />
+                                                <Label fx:id="tn21" alignment="CENTER" prefHeight="17.0" prefWidth="42.0" text="TN" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="85.0" text="Prédite" GridPane.columnIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="41.0" text="Réelle" GridPane.rowIndex="1" />
+                                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="59.0" text="Classe" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </GridPane>
+                        <GridPane gridLinesVisible="true" layoutX="450.0" layoutY="464.0" prefHeight="103.0" prefWidth="274.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="143.0" text="Accuracy moyenne" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="149.0" text="Sensitivity moyenne" GridPane.rowIndex="1" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="144.0" text="Specificity moyenne" GridPane.rowIndex="2" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="139.0" text="Precision moyenne" GridPane.rowIndex="3" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="137.0" text="Rappel moyenne" GridPane.rowIndex="4" />
+                                <Label alignment="CENTER" prefHeight="18.0" prefWidth="137.0" text="F-Score moyenne" GridPane.rowIndex="5" />
+                                <Label fx:id="accuracy_m" alignment="CENTER" prefHeight="17.0" prefWidth="119.0" GridPane.columnIndex="1" />
+                                <Label fx:id="sensitivity_m" alignment="CENTER" prefHeight="17.0" prefWidth="137.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label fx:id="specificity_m" alignment="CENTER" prefHeight="17.0" prefWidth="145.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label fx:id="precision_m" alignment="CENTER" prefHeight="17.0" prefWidth="138.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label fx:id="rappel_m" alignment="CENTER" prefHeight="17.0" prefWidth="139.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Label fx:id="fscore_m" alignment="CENTER" prefHeight="17.0" prefWidth="136.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                            </children>
+                        </GridPane>
+                        <GridPane gridLinesVisible="true" layoutX="884.0" layoutY="464.0" prefHeight="103.0" prefWidth="274.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="142.0" text="Accuracy moyenne" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="149.0" text="Sensitivity moyenne" GridPane.rowIndex="1" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="144.0" text="Specificity moyenne" GridPane.rowIndex="2" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="139.0" text="Precision moyenne" GridPane.rowIndex="3" />
+                                <Label alignment="CENTER" prefHeight="17.0" prefWidth="137.0" text="Rappel moyenne" GridPane.rowIndex="4" />
+                                <Label alignment="CENTER" prefHeight="18.0" prefWidth="137.0" text="F-Score moyenne" GridPane.rowIndex="5" />
+                                <Label fx:id="accuracy_m1" alignment="CENTER" prefHeight="17.0" prefWidth="121.0" GridPane.columnIndex="1" />
+                                <Label fx:id="sensitivity_m1" alignment="CENTER" prefHeight="17.0" prefWidth="137.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label fx:id="specificity_m1" alignment="CENTER" prefHeight="17.0" prefWidth="145.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label fx:id="precision_m1" alignment="CENTER" prefHeight="17.0" prefWidth="138.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label fx:id="rappel_m1" alignment="CENTER" prefHeight="17.0" prefWidth="139.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Label fx:id="fscore_m1" alignment="CENTER" prefHeight="17.0" prefWidth="136.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                            </children>
+                        </GridPane>
+                        <Label fx:id="classResult" alignment="CENTER" layoutX="38.0" layoutY="548.0" prefHeight="63.0" prefWidth="324.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10;">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="confusionBtnB" layoutX="502.0" layoutY="581.0" mnemonicParsing="false" onAction="#showConfusion" prefHeight="34.0" prefWidth="169.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-border-width: 0;" text="Matrice de confusion" />
+                        <Button fx:id="confusionBtnB1" layoutX="937.0" layoutY="580.0" mnemonicParsing="false" onAction="#showConfusion1" prefHeight="34.0" prefWidth="169.0" style="-fx-background-color: #DBEAFE; -fx-background-radius: 10; -fx-border-width: 0;" text="Matrice de confusion" />
+                        <Label layoutX="155.0" layoutY="14.0" prefHeight="20.0" prefWidth="89.0" text="Classification">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Untitled Tab">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <HBox layoutX="491.0" layoutY="216.0" prefHeight="145.0" prefWidth="311.0" style="-fx-background-color: #DBEAFE;">
+                            <children>
+                                <Label prefHeight="17.0" prefWidth="29.0" rotate="-90.0" text="Label" />
+                                <TableView prefHeight="145.0" prefWidth="311.0">
+                                    <columns>
+                                        <TableColumn prefWidth="75.0" />
+                                        <TableColumn prefWidth="256.6666259765625" text="Classes prédites">
+                                            <columns>
+                                                <TableColumn prefWidth="84.0" text="Kama" />
+                                                <TableColumn prefWidth="74.66668701171875" text="Rosa" />
+                                                <TableColumn prefWidth="75.0" text="Canadian" />
+                                            </columns>
+                                        </TableColumn>
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
